@@ -13,12 +13,12 @@ const routes: Routes = [
     },
     canActivate: [AuthGuard, EntitlementsGuard],
   },
-  {
-    path: 'positive-pay',
-    loadChildren: () =>
-      import('./positive-pay/positive-pay-journey-bundle.module').then((m) => m.PositivePayJourneyBundleModule),
-    canActivate: [AuthGuard],
-  },
+  // {
+  //   path: 'positive-pay',
+  //   loadChildren: () =>
+  //     import('./positive-pay/positive-pay-journey-bundle.module').then((m) => m.PositivePayJourneyBundleModule),
+  //   canActivate: [AuthGuard],
+  // },
   {
     path: 'ach-positive-pay',
     loadChildren: () =>
