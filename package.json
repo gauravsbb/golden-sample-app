@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "start:proxy:drupal": "ng serve --proxy-config ./proxy.drupal.config.json",
     "build:stats": "ng build --configuration production --stats-json",
     "analyze": "webpack-bundle-analyzer dist/golden-sample-app/stats.json",
     "build:docker": "docker build -t golden-sample-app:latest .",
