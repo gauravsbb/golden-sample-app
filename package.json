@@ -38,7 +38,7 @@
     "@ng-select/ng-select": "^6.1.0",
     "@ngrx/effects": "13.0.2",
     "@ngrx/store": "13.0.2",
-    "@nrwl/angular": "13.8.0",
+    "@nrwl/angular": "13.8.1",
     "angular-oauth2-oidc": "^13.0.1",
     "bignumber.js": "^9.0.1",
     "ngx-cookie-service": "^13.1.2",
@@ -56,12 +56,12 @@
     "@angular/cli": "13.2.2",
     "@angular/compiler-cli": "13.2.2",
     "@angular/language-service": "13.2.2",
-    "@nrwl/cli": "13.8.0",
-    "@nrwl/eslint-plugin-nx": "13.8.0",
-    "@nrwl/jest": "13.8.0",
-    "@nrwl/linter": "13.8.0",
-    "@nrwl/tao": "13.8.0",
-    "@nrwl/workspace": "13.8.0",
+    "@nrwl/cli": "13.8.1",
+    "@nrwl/eslint-plugin-nx": "13.8.1",
+    "@nrwl/jest": "13.8.1",
+    "@nrwl/linter": "13.8.1",
+    "@nrwl/tao": "13.8.1",
+    "@nrwl/workspace": "13.8.1",
     "@playwright/test": "^1.18.1",
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.22",
@@ -86,3 +86,4 @@
     "webpack-bundle-analyzer": "^4.4.2"
   }
 }
+
