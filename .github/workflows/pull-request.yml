@@ -39,6 +39,6 @@ jobs:
             ${{ runner.os }}-
       - run: curl -s -u"${{ secrets.BB_USERNAME }}:${{ secrets.BB_PASSWORD }}" https://repo.backbase.com/api/npm/npm-backbase/auth/backbase > .npmrc
       - run: npm ci
-      - run: npx nx affected --target=build --parallel=3
-      - run: npx nx affected --target=test --parallel=2
+      - run: npx nx affected --target=build --parallel=3 --base=master
+      - run: npx nx affected --target=test --parallel=2 --base=master
 
