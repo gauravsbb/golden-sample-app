@@ -44,6 +44,5 @@ jobs:
       - run: npm run format:check
       - run: npm run lint
       - run: npm run affected:test
-      - run: npm run e2e
       - run: npm run xi18n
       - run: npm run affected:build
