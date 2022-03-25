@@ -1,7 +1,7 @@
 {
   "npmScope": "backbase",
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "master"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
