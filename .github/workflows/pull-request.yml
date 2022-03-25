@@ -46,7 +46,7 @@ jobs:
       - run: curl -s -u"${{ secrets.BB_USERNAME }}:${{ secrets.BB_PASSWORD }}" https://repo.backbase.com/api/npm/npm-backbase/auth/backbase > .npmrc
       - run: npm ci
       - run: npm run format:check
-      - run: npm run affected:lint -- --base=origin/${{base_ref}}
-      - run: npm run affected:test -- --base=origin/${{base_ref}}
+      - run: npm run affected:lint -- --base=origin/${{GITHUB_BASE_REF}}
+      - run: npm run affected:test -- --base=origin/${{GITHUB_BASE_REF}}
       - run: npm run xi18n
-      - run: npm run affected:build -- --base=origin/${{base_ref}}
+      - run: npm run affected:build -- --base=origin/${{GITHUB_BASE_REF}}
