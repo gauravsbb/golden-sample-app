@@ -39,10 +39,14 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - run: |
+          echo "github.base_ref:" ${{ github.base_ref }}
+          echo "github.head_ref:" ${{ github.head_ref }}
+          echo "github.ref:" ${{ github.ref }}
       - run: curl -s -u"${{ secrets.BB_USERNAME }}:${{ secrets.BB_PASSWORD }}" https://repo.backbase.com/api/npm/npm-backbase/auth/backbase > .npmrc
       - run: npm ci
       - run: npm run format:check
-      - run: npm run lint
-      - run: npm run affected:test
+      - run: npm run affected:lint -- --base=origin/${{base_ref}}
+      - run: npm run affected:test -- --base=origin/${{base_ref}}
       - run: npm run xi18n
-      - run: npm run affected:build
+      - run: npm run affected:build -- --base=origin/${{base_ref}}
