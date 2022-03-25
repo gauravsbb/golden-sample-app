@@ -6,7 +6,7 @@ name: Node.js CI
 on:
   push:
     branches:
-      - "main"
+      - "master"
       - "release/**"
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
         with:
-          main-branch-name: "master"
+          main-branch-name: ${{github.ref_name}}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
