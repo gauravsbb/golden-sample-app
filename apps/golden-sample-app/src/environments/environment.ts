@@ -21,12 +21,15 @@ export const environment: Environment = {
   apiRoot: '/api',
   mockProviders,
   locales: ['en-US', 'nl-NL'],
+  common: {
+    designSlimMode: false,
+  },
 };
 
 export const authConfig: AuthConfig = {
   // Url of the Identity Provider
   issuer:
-    'https://identity.dev.sdbx.live.backbaseservices.com/auth/realms/retail',
+    'https://identity.prd.sdbx.live.backbaseservices.com/auth/realms/retail',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: document.location.origin + '/select-context',
