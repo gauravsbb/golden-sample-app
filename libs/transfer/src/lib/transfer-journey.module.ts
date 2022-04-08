@@ -5,7 +5,6 @@ import { provideRoutes, Route, RouterModule } from '@angular/router';
 import { MakeTransferJourneyState } from './services/make-transfer-journey-state.service';
 import { MakeTransferFormComponent } from './components/make-transfer-form/make-transfer-form.component';
 import { MakeTransferSummaryComponent } from './components/make-transfer-summary/make-transfer-summary.component';
-import { TRANSLATIONS } from './constants/dynamic-translations';
 import { MakeTransferJourneyStoreGuard } from './make-transfer-journey-store-guard';
 import { TransferJourneyComponent } from './transfer-journey.component';
 import { MakeTransferSuccessViewComponent } from './views/make-transfer-success-view/make-transfer-success-view.component';
@@ -19,6 +18,9 @@ import { CurrencyInputModule } from '@backbase/ui-ang/currency-input';
 import { AccountSelectorModule } from '@backbase/ui-ang/account-selector';
 import { InputValidationMessageModule } from '@backbase/ui-ang/input-validation-message';
 import { LoadingIndicatorModule } from '@backbase/ui-ang/loading-indicator';
+import { MakeTransferRouteTitleResolverService } from './services/make-transfer-route-title-resolver.service';
+import { TRANSLATIONS } from './constants/dynamic-translations';
+import { MakeTransferTitleComponent } from './components/make-transfer-ui/make-transfer-title.component';
 
 const defaultRoute: Route = {
   path: '',
@@ -35,12 +37,18 @@ const defaultRoute: Route = {
       data: {
         title: TRANSLATIONS.makeTransferTitle,
       },
+      resolve: {
+        title: MakeTransferRouteTitleResolverService,
+      },
     },
     {
       path: 'make-transfer-summary',
       component: MakeTransferSummaryViewComponent,
       data: {
         title: TRANSLATIONS.makeTransferTitle,
+      },
+      resolve: {
+        title: MakeTransferRouteTitleResolverService,
       },
       canActivate: [MakeTransferJourneyStoreGuard],
     },
@@ -49,6 +57,9 @@ const defaultRoute: Route = {
       component: MakeTransferSuccessViewComponent,
       data: {
         title: TRANSLATIONS.makeTransferTitle,
+      },
+      resolve: {
+        title: MakeTransferRouteTitleResolverService,
       },
       canActivate: [MakeTransferJourneyStoreGuard],
     },
@@ -63,6 +74,7 @@ const defaultRoute: Route = {
     MakeTransferSummaryComponent,
     MakeTransferSummaryViewComponent,
     MakeTransferSuccessViewComponent,
+    MakeTransferTitleComponent,
   ],
   imports: [
     CommonModule,
@@ -80,6 +92,7 @@ const defaultRoute: Route = {
     MakeTransferJourneyConfiguration,
     MakeTransferPermissionsService,
     MakeTransferAccountHttpService,
+    MakeTransferRouteTitleResolverService,
   ],
   exports: [TransferJourneyComponent],
 })
