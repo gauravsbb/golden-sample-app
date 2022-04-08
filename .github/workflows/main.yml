@@ -48,7 +48,7 @@ jobs:
           echo "github.head_ref:" ${{ github.head_ref }}
           echo "github.ref:" ${{ github.ref }}
       - run: curl -s -u"${{ secrets.BB_USERNAME }}:${{ secrets.BB_PASSWORD }}" https://repo.backbase.com/api/npm/npm-backbase/auth/backbase > .npmrc
-      # - run: npm ci
+      - run: npm ci
       # - run: npm run format:check
       # - run: npx nx affected --target=lint --parallel=2
       # - run: npx nx affected --target=test --parallel=2
