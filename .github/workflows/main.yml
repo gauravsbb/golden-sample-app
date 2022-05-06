@@ -64,5 +64,5 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           push: true
-          tags: golden-sample-app-test/latest
+          tags: golden-sample-app/latest
           repository: ${{ github.event.repository.name }}
