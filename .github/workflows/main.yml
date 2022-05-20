@@ -61,8 +61,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: ${{ secrets.DOCKER_REGISTRY }}
       - name: "Build and push latest docker Image:"
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           push: true
           tags: golden-sample-app/latest
-          repository: ${{ github.event.repository.name }}
+          context: .
